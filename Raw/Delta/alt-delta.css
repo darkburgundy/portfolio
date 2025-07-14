@@ -1,0 +1,88 @@
+@import url('https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,200..1000;1,200..1000&display=swap');
+
+:root {
+    --bg-color: #2d0016; /* Default Background */
+    --header-text-color: #df0fdf33;
+    --text-color: #fff; /* Default Text Color */
+    --subtext-color: #9d9090;
+    --border-color: #fff; /* Default Border Color */
+}
+
+/* Google Icons Style */
+.material-icons {
+    cursor: pointer;
+    color: var(--materialicon-color);
+}
+
+.material-icons:hover {
+    transform: scale(1.2);
+    transition: ease 0.66s;
+}
+
+/* Default Styling */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Nunito', 'Roboto', sans-serif;
+}
+
+body {
+    background: #c6c5c5;
+    color: var(--text-color);
+    height: 100dvh;
+
+    /* Responsive Grid Container */
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+    grid-auto-flow: dense;
+}
+
+header, nav, .hero-container, main, section.banner, aside, footer {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    background: #fff;
+    color: #333;
+}
+
+header {
+    grid-column: 1 / 2;
+    background: red;
+}
+nav {
+    grid-column: 2 / -1;
+    background: rgb(17, 255, 0);
+}
+.hero-container {
+    grid-column: 1 / auto-fit;
+    background: rgb(51, 0, 255);
+}
+main {
+    grid-area: span 2 / span 2;
+
+    background: rgb(196, 213, 16);
+}
+section.banner {
+    grid-column: -3 / -1;
+    background: rgb(255, 140, 0);
+}
+aside {
+    grid-column: -3 / -1;
+    background: rgb(21, 1, 1);
+    color: #fff;
+}
+footer {
+    grid-column: 1 / autofit;
+    background: rgb(255, 0, 217);
+}
+
+/* Media Query */
+/* Medium devices (landscape tablets, 768px and up) */
+@media only screen and (max-width: 680px) {
+    header, nav, main, section.banner, aside {
+        grid-column: 1 / auto-fit;
+    }
+}

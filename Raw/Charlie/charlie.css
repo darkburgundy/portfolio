@@ -1,0 +1,201 @@
+@import url('https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,200..1000;1,200..1000&display=swap');
+
+:root {
+    --nav-bg-color: #f66b08;
+    --bg-color: #ffffff; /* Default Background */
+    --text-color: #fff; /* Default Text Color */
+    --subtext-color: #9d9090;
+    --textlogo-color: #fff;
+    --border-color: #fff; /* Default Border Color */
+    --borderhover-color: rgb(0, 128, 0);
+    --close-color: #fff; /* Default Close Color */
+    --materialicon-color: #fff;
+}
+
+/* Google Icons Style */
+.material-icons {
+    cursor: pointer;
+    color: var(--materialicon-color);
+}
+/* Default Styling & Main Grid Layout */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Nunito', 'Roboto', sans-serif;
+    overflow-x: none;
+}
+body {
+    /* Main Grid Layout */
+    display: grid;
+    grid-template-columns: repeat(12, 1fr);
+    grid-template-rows: auto;
+    max-width: 100dvw;
+}
+nav, header, main, section, footer {
+    grid-column: 1 / 13;
+}
+button {
+    padding: 0.5rem 0.625rem;
+    background: var(--nav-bg-color);
+    color: var(--text-color);
+    border: none;
+    min-width: 30%;
+    cursor: pointer;
+}
+/* Quick Flex Classes */
+.flex-container {display: flex; gap: 1.25rem;}
+.flex-row {flex-direction: row;}
+.flex-col {flex-direction: column;}
+.flex-seventy {width: 70%; min-width: 50%;}
+.justify-center {justify-content: center;}
+.space-around {justify-content: space-around;}
+.space-between{justify-content: space-between;}
+.space-evenly{justify-content: space-evenly;}
+.align-center {align-items: center;}
+.center-txt {text-align: center;}
+
+/* Nav & Header Styling */
+nav {
+    background: var(--nav-bg-color);
+    color: var(--text-color);
+    padding: 1rem;
+    z-index: 10;
+}
+header {
+    height: 100dvh;
+    background: var(--bg-color);
+}
+.hero-container {
+    height: 92.5%; /* Adjusted to keep the .hero-container full VH minus navbar height (add a border and remove the height to see the non-adjusted-output) */
+    background: url('./assets/pexels-jayoke-Jason-Villanueva.jpg') no-repeat;
+    background-position: center;
+    background-size: cover;
+}
+.hero {
+    background: transparent;
+    color: black;
+}
+.hero-text {
+    width: 28.125rem;
+    min-width: 21.875rem;
+    margin: 0 0 0 9.375rem;
+    color: var(--text-color);
+}
+.hero-text h2 {
+    font-size: 3.4rem;
+    font-weight: 800;
+}
+.hero-btn {
+    width: 30%;
+}
+/* End of Nav & Header Styling */
+
+/* Main Section Styling */
+main.subgrid-container {
+    display: grid;
+    grid-template-columns: repeat(12, 1fr);
+    gap: 1.5rem;
+    margin: 1.5rem 0;
+}
+.main-intro {
+    grid-column: 1 / 13;
+}
+.main-intro > div {
+    width: 40%;
+}
+.main-text {
+    padding: 3rem;
+}
+.one-img{
+    grid-column: 1 / 7;
+}
+.one-desc {
+    grid-column: 7 / 13;
+}
+.two-img{
+    grid-column: 1 / 7;
+}
+.two-desc {
+    grid-column: 7 / 13;
+}
+.three-img{
+    grid-column: 1 / 7;
+}
+.three-desc {
+    grid-column: 7 / 13;
+}
+.main-text > h2 {
+    font-size: 3.5rem;
+    line-height: 1;
+}
+.product-img > img {
+    width: 15vw;
+    max-width: 30vw;
+}
+.price {
+    font-weight: 800;
+}
+.no-discount {
+    text-decoration: line-through;
+    padding: 0 0.8rem 0 0;
+}
+
+/* Section Styling */
+section {
+    grid-column: 1 / 13;
+    background: var(--bg-color);
+    height: 250px;
+}
+.section-text {
+    width: 37%;
+    /* width of div containing section text to force text-wrap, probably a better way to do this... but you know how it is. */
+}
+section > div > button {
+    width: 30%;
+}
+.section-img {
+   background: url("./assets/pexels-viktoria-alipatova-1083711-2074130.jpg") center no-repeat;
+   background-size: cover;
+   min-height: 550px;
+   max-height: 100%;
+}
+/* Footer Styling */
+footer {
+    grid-column: 1 / 13;
+    background: #333;
+    color: var(--text-color);
+    padding: 0.5rem 0.625rem;
+    font-size: 0.8rem;
+}
+
+/* First breakpoint: 2 columns for tablets */
+@media (max-width: 980px) { /* Adjust this breakpoint as needed */
+    main.subgrid-container {
+        display: block;
+    }
+    .main-intro > div, .main-text {
+        width: 100%;   
+    }
+    .one-img > img, .two-img > img, .three-img > img {
+        width: 100%;
+        /* UPDATE HTML TO HAVE THE <IMG> ELEMENT IN THE APPROPRIATE SPOT */
+    }
+    .hero-text {
+        margin: 0;
+    }
+    .hero-container {
+        justify-content: center;
+        align-items: center;
+        /* centers hero container on div, due to min-width sizing on desktop */
+    }
+    .section-text {
+        width: 100%;
+        /* reset width to 100% for mobile devices... set to 37% on desktop. */
+    }
+    .product-img > img {
+        width: 40dvw;
+        max-width: 40dvw;
+    }
+}
+

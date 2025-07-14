@@ -1,0 +1,248 @@
+@import url('https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,200..1000;1,200..1000&display=swap');
+
+:root {
+    --materialicon-color: #333;
+    --border-color: none;
+    --hero-text: #fff;
+    --overlay-color: #1b184f;
+    --border-radius: 5px;
+    --link-color: #58b6fa;
+    --gradient-background: linear-gradient(0deg,rgba(34, 193, 195, 1) 0%, rgba(73, 14, 156, 0.91) 100%);
+}
+
+/* Google Icons Style */
+.material-icons {
+    cursor: pointer;
+    color: var(--materialicon-color);
+}
+
+.material-icons:hover {
+    transform: scale(1.2);
+    transition: ease 0.66s;
+}
+
+/* Default Styling */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Nunito', 'Roboto', sans-serif;
+}
+a {
+    color: var(--link-color);
+}
+button, input[type=button] {
+    background: yellow;
+    color: #333;
+    cursor: pointer;
+    font-weight: 700;
+    padding: 10px 15px;
+}
+input, select {
+    padding: 10px 15px;
+    width: 100%;
+}
+/* ************************************************ Temp while building layout */
+nav, header, section, footer, div {
+    padding: 10px;
+    /* This border is creating the weird effect you see on the header and section areas, its set to transparent at :root */
+    border: 1px solid var(--border-color);
+}
+
+/* General Layout Style: Desktop */
+body {
+    display: grid;
+    grid-template-columns: repeat(12, 1fr);
+}
+nav, header, section, footer {
+    grid-column: 1 / 13;
+}
+.flex-row {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+}
+.flex-col {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+.align-start {
+    align-items: start; /* For Hero Text */
+}
+.align-center {
+    align-items: center; /* Contact Us Button */
+}
+.left-container, .right-container, .center-container {
+    width: 25%;
+    max-width: 30%;
+    height: auto;
+    padding: 50px 10px;
+}
+
+/* Navigation Style */
+nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 50px;
+}
+
+/* Hero/Header Text */
+header {
+    background: url(pexels-janetrangdoan-1024248.jpg);
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    margin: 0;
+    padding: 0;
+}
+.overlay {
+    background: #000000d0;
+    height: 100%;
+    padding: 50px 0;
+}
+ul.hero-list {
+    margin: 10px 0 0 50px;
+}
+.hero-text {
+    color: var(--hero-text);
+    min-width: 50%;
+    /* Hero Text Spacing */
+    gap: 25px;
+}
+.hero-text > p, li {
+    font-size: 17px;
+    line-height: 1.7;
+    letter-spacing: 0.8px;
+}
+.hero-text > h3 {
+    font-size: 20px;
+}
+.hero-text > h2 {
+    font-size: 45px;
+}
+/* Form Styling */
+.hero-form {
+    background: var(--overlay-color);
+    color: #fff;
+    height: auto;
+    border-radius: var(--border-radius);
+}
+.hero-form > h3 {
+    margin: 0 0 15px 0;
+}
+form {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+}
+form > div {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+}
+
+
+/* Speakers Section */
+section > h2, .speaker-text, .cta-section, footer {
+    text-align: center;
+}
+section > h2 {
+    color: #fff;
+}
+.speakers {
+    background: var(--gradient-background);
+    padding: 50px 0;
+}
+.speaker-text {
+    padding: 10px 15px 100px 15px;
+    background: lightblue;
+    min-width: 50dvh;
+    text-align: left;
+    border-radius: var(--border-radius);
+}
+.speaker-details {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 75px 0;
+    min-width: 50dvh;
+    color: var(--hero-text);
+}
+.speaker-image {
+    /* Position the Speaker IMG within the DIV (or outside) */
+    position: absolute;
+    object-fit: cover;
+
+    /* -62.5pxx is half the height of the image */
+    top: -62.5px;
+    /* This border is specific to the speaker-image */
+    border-radius: 50%;
+}
+
+/* CTA Section "call to action" Style */
+.cta-section {
+    background: url(pexels-kisaminuart-kisaminuart-1306332-2498885.jpg);
+    background-size: cover;
+    background-position: center;
+    padding: 0;
+    margin: 0;
+    color: var(--hero-text)
+}
+.cta-section > .overlay > .flex-col {
+    min-height: 50dvh;
+}
+
+.overlay > .flex-col > button {
+    margin: 50px 0 0 0;
+}
+/* Footer Style */
+footer {
+    background: #333;
+    color: #fff;
+}
+.pexels-credit {
+    font-size: 14px;
+    color: #ffffff59;
+}
+/* Media Queries for Mobile */
+@media screen and (min-width: 280px) and (max-width: 980px) {
+    
+    /* Switch to Column for Mobile (excluding nav.flex-row)  */
+    .flex-row {
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+    nav.flex-row {
+        /* needed to keep navbar items in a row */
+        flex-direction: row;
+        justify-content: space-between;
+    }
+
+    /* Header/Speaker Container on Mobile */
+    .left-container, .right-container, .center-container {
+        padding: 15px 10px;
+        width: 90%;
+        max-width: 90%;
+        /* need another media query for tablet, and smaller screens */
+    }
+  
+    .hero-form {
+        /* add spacing between hero text and form on modbile */
+        margin: 50px 0 0 0;
+    }
+    .hero-form > h3 {
+        /* adds extra space between the h3 text and top of container (looks cleaner) */
+        padding: 20px 10px;
+    }
+    .cta-section > div > .flex-col {
+        padding: 0 15px;
+        /* adds extra padding on left & right of .cta-section, easier to read text */
+    }
+   
+}
+

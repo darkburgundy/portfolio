@@ -1,0 +1,442 @@
+@import url('https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,200..1000;1,200..1000&display=swap');
+
+:root {
+    --materialicon-color: #333;
+    --bg-color: rgb(14, 163, 212);
+    --btn-text: rgb(11, 135, 177);
+    --btn-bg: #fff;
+    --btn-text-hvr: #fff;
+    --border-color: 1px solid red;
+    --hero-text: #fff;
+    --light-text-color: #fff;
+    --dark-text-color: #333;
+    --overlay-color: #1b184f;
+    --border-radius: 5px;
+    --flex-gap: 1.3rem;
+    --link-color: #58b6fa;
+    --gradient-background: linear-gradient(0deg,rgba(34, 193, 195, 1) 0%, rgba(73, 14, 156, 0.91) 100%);
+}
+
+/* Google Icons Style */
+.material-icons {
+    cursor: pointer;
+    color: var(--materialicon-color);
+}
+
+/* Default Styling */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Nunito', 'Roboto', sans-serif;
+}
+body {
+    overflow-x: hidden;
+}
+.padding-default {
+    padding: 5rem 1rem;
+}
+button {
+    padding: 10px 15px;
+    border: 2px solid var(--bg-color);
+    cursor: pointer;
+    color: var(--btn-text);
+    font-weight: 700;
+    text-transform: uppercase;
+    max-width: 250px;
+    border-radius: 2px;
+    background: var(--btn-bg);
+}
+button:hover {
+    font-weight: 700;
+    text-transform: uppercase;
+    transform: scale(1.02);
+    transition: ease 0.4s;
+}
+/* Flex Options */
+.flex-container {
+    display: flex;
+    width: 100%;
+}
+.flex-gap {
+    gap: var(--flex-gap);
+}
+.flex-row {
+    flex-direction: row;
+}
+.flex-col {
+    flex-direction: column;
+}
+.space-between {
+    justify-content: space-between;
+}
+.space-around {
+    justify-content: space-around;
+}
+.align-center {
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+.justify-center {
+    justify-content: center;
+}
+/* full viewport header */
+.full-vw {
+    height: 100dvh;
+}
+/* <nav> styling */
+nav {
+    border: var(--border-color);
+    padding: 10px 15px;
+}
+
+/* <header> styling */
+header {
+    background: var(--bg-color);
+    color: var(--light-text-color);
+    height: calc(100% - 20px);
+    align-items: center;
+}
+header > div {
+    max-width: 50%; /* equal size columns in header/hero */
+}
+.flex-img {
+    background-image: url(".assets/man-in-blue\ \(1\).png");
+    background-size: contain;
+    background-repeat: no-repeat;
+    width: 30rem;
+    height: 30rem;
+}
+.align-right {
+    justify-content: end;
+}
+/* <main> content styling */
+main {
+    background: #fff;
+} 
+main > div > .box {
+    padding: 2rem 3rem;
+    display: flex; 
+    width: 400px;
+    min-width: 350px;
+}
+.box > p {
+    text-align: left;
+}
+.box > img {
+    width: 150px; /* icon size */
+    align-self: center; /* centers Icons */
+}
+.box > h3 {
+    text-align: center;
+}
+main > div:nth-of-type(1) {
+    min-height: 500px;
+}
+main > div:nth-of-type(2) {
+    background: var(--bg-color);
+    color: var(--light-text-color);
+    min-height: 500px;
+}
+main > div:nth-of-type(3) {
+    background: #333;
+    color: var(--light-text-color);
+    min-height: 500px;
+}
+
+/* <section> styling */
+.img-box {
+  background-color: #f1f1f1;
+  width: 12rem;
+  margin: 10px;
+  height: 12rem;
+  max-width: 100%;
+  max-height: 100%;
+}
+
+.img-box > img {
+    width: 12rem;
+    height: 12rem;
+    cursor: pointer;
+    object-fit: cover;
+}
+
+/* <footer> styling */
+footer > div:nth-of-type(1) {
+    background: #333;
+    color: var(--light-text-color)
+}
+.terms, .social {
+    padding: 25px 0 10px 0;
+}
+
+/* Media Queries for Mobile */
+@media screen and (min-width: 380px) and (max-width: 980px) {
+
+    header {
+        flex-direction: column; /* stacks the hero img and text */
+    }
+    header > div:nth-of-type(even) {
+        min-width: 90%; /* Adjust Hero Text-Container to be Wider */
+    }
+    div.mobile {
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        text-align: center;
+    }
+    .flex-img {
+        display: none;
+    }
+    .box {
+        width: 100%;
+        max-width: 100%;
+    }
+
+    section > div.flex-container {
+        flex-direction: column;
+    }
+    .img-box, .img-box > img {
+        width: 100%;
+        height: auto;
+    }
+
+}
+
+
+/* First breakpoint: 2 columns for tablets */
+@media (max-width: 850px) { /* Adjust this breakpoint as needed */
+    .flex-list-item {
+        flex-basis: calc(50% - 15px); /* 2 items per row */
+        padding-bottom: calc(50% - 15px);
+    }
+}
+
+/* Second breakpoint: 1 column for mobile phones (stacking) */
+@media (max-width: 480px) {
+    .flex-list-item {
+        flex-basis: calc(100% - 15px); /* 1 item per row */
+        padding-bottom: calc(100% - 15px);
+    }
+}
+@import url('https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,200..1000;1,200..1000&display=swap');
+
+:root {
+    --materialicon-color: #333;
+    --bg-color: rgb(14, 163, 212);
+    --btn-text: rgb(11, 135, 177);
+    --btn-bg: #fff;
+    --btn-text-hvr: #fff;
+    --border-color: 1px solid red;
+    --hero-text: #fff;
+    --light-text-color: #fff;
+    --dark-text-color: #333;
+    --overlay-color: #1b184f;
+    --border-radius: 5px;
+    --flex-gap: 1.3rem;
+    --link-color: #58b6fa;
+    --gradient-background: linear-gradient(0deg,rgba(34, 193, 195, 1) 0%, rgba(73, 14, 156, 0.91) 100%);
+}
+
+/* Google Icons Style */
+.material-icons {
+    cursor: pointer;
+    color: var(--materialicon-color);
+}
+
+/* Default Styling */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Nunito', 'Roboto', sans-serif;
+}
+body {
+    overflow-x: hidden;
+}
+.padding-default {
+    padding: 5rem 1rem;
+}
+button {
+    padding: 10px 15px;
+    border: 2px solid var(--bg-color);
+    cursor: pointer;
+    color: var(--btn-text);
+    font-weight: 700;
+    text-transform: uppercase;
+    max-width: 250px;
+    border-radius: 2px;
+    background: var(--btn-bg);
+}
+button:hover {
+    font-weight: 700;
+    text-transform: uppercase;
+    transform: scale(1.02);
+    transition: ease 0.4s;
+}
+/* Flex Options */
+.flex-container {
+    display: flex;
+    width: 100%;
+}
+.flex-gap {
+    gap: var(--flex-gap);
+}
+.flex-row {
+    flex-direction: row;
+}
+.flex-col {
+    flex-direction: column;
+}
+.space-between {
+    justify-content: space-between;
+}
+.space-around {
+    justify-content: space-around;
+}
+.align-center {
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+.justify-center {
+    justify-content: center;
+}
+/* full viewport header */
+.full-vw {
+    height: 100dvh;
+}
+/* <nav> styling */
+nav {
+    border: var(--border-color);
+    padding: 10px 15px;
+}
+
+/* <header> styling */
+header {
+    background: var(--bg-color);
+    color: var(--light-text-color);
+    height: calc(100% - 20px);
+    align-items: center;
+}
+header > div {
+    max-width: 50%; /* equal size columns in header/hero */
+}
+.flex-img {
+    background-image: url("man-in-blue\ \(1\).png");
+    background-size: contain;
+    background-repeat: no-repeat;
+    width: 30rem;
+    height: 30rem;
+    border: 1px solid red;
+}
+.align-right {
+    justify-content: end;
+}
+/* <main> content styling */
+main {
+    background: #fff;
+} 
+main > div > .box {
+    padding: 2rem 3rem;
+    display: flex; 
+    width: 400px;
+    min-width: 350px;
+}
+.box > p {
+    text-align: left;
+}
+.box > img {
+    width: 150px; /* icon size */
+    align-self: center; /* centers Icons */
+}
+main > div:nth-of-type(1) {
+    min-height: 500px;
+}
+main > div:nth-of-type(2) {
+    background: var(--bg-color);
+    color: var(--light-text-color);
+    min-height: 500px;
+}
+main > div:nth-of-type(3) {
+    background: #333;
+    color: var(--light-text-color);
+    min-height: 500px;
+}
+
+/* <section> styling */
+.img-box {
+  background-color: #f1f1f1;
+  width: 12rem;
+  margin: 10px;
+  height: 12rem;
+  max-width: 100%;
+  max-height: 100%;
+}
+
+.img-box > img {
+    width: 12rem;
+    height: 12rem;
+    cursor: pointer;
+    object-fit: cover;
+}
+
+/* <footer> styling */
+footer > div:nth-of-type(1) {
+    background: #333;
+    color: var(--light-text-color)
+}
+.terms, .social {
+    padding: 25px 0 10px 0;
+}
+
+/* Media Queries for Mobile */
+@media screen and (min-width: 380px) and (max-width: 980px) {
+
+    header {
+        flex-direction: column; /* stacks the hero img and text */
+    }
+    header > div:nth-of-type(even) {
+        min-width: 90%; /* Adjust Hero Text-Container to be Wider */
+    }
+    div.mobile {
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        text-align: center;
+    }
+    .flex-img {
+        display: none;
+    }
+    .box {
+        width: 100%;
+        max-width: 100%;
+    }
+
+    section > div.flex-container {
+        flex-direction: column;
+    }
+    .img-box, .img-box > img {
+        width: 100%;
+        height: auto;
+    }
+
+}
+
+
+/* First breakpoint: 2 columns for tablets */
+@media (max-width: 850px) { /* Adjust this breakpoint as needed */
+    .flex-list-item {
+        flex-basis: calc(50% - 15px); /* 2 items per row */
+        padding-bottom: calc(50% - 15px);
+    }
+}
+
+/* Second breakpoint: 1 column for mobile phones (stacking) */
+@media (max-width: 480px) {
+    .flex-list-item {
+        flex-basis: calc(100% - 15px); /* 1 item per row */
+        padding-bottom: calc(100% - 15px);
+    }
+}
